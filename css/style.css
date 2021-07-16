@@ -1,0 +1,36 @@
+:root {
+    box-sizing: border-box;
+}
+
+#game {
+    width: 600px;
+    height: 500px;
+    display:flex;
+}
+
+.column {
+	border: 3px solid #50f;
+	display: flex;
+    flex-grow: 1;
+	flex-basis: 100%;
+	flex-direction: column-reverse;
+}
+
+.column:hover {
+    background-color: rgb(201, 174, 254);
+}
+
+.disc {
+	width: 75px;
+	height: 75px;
+    border-radius: 50%;
+	margin: 2px 2px 5px;
+}
+
+.red {
+	background-color: red;
+}
+
+.black {
+	background-color: black;
+}
