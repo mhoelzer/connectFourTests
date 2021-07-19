@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Four</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>Connect Four</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Connect Four</title>
+        <link rel="stylesheet" href="css/style.css" />
 
-    <div id="message"></div>
+        <!-- Add Mocha CSS-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
+        />
+        <!-- Add Mocha Framework Code -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+        <script>
+            mocha.setup("bdd");
+        </script>
+    </head>
+    <body>
+        <h1>Connect Four</h1>
 
-    <div id="game">
-        <div class="column" id="col0"></div>
-        <div class="column" id="col1"></div>
-        <div class="column" id="col2"></div>
-        <div class="column" id="col3"></div>
-        <div class="column" id="col4"></div>
-        <div class="column" id="col5"></div>
-        <div class="column" id="col6"></div>
-    </div>
+        <div id="message"></div>
 
-    <script src="src/connect4.js"></script>
-</body>
+        <div id="game">
+            <div class="column" id="col0"></div>
+            <div class="column" id="col1"></div>
+            <div class="column" id="col2"></div>
+            <div class="column" id="col3"></div>
+            <div class="column" id="col4"></div>
+            <div class="column" id="col5"></div>
+            <div class="column" id="col6"></div>
+        </div>
+
+        <script src="src/connect4.js"></script>
+
+		<!-- MOCHA TESTING -->
+
+        <!-- <script>
+            describe("pow", function () {
+                describe("raises x to power 3", function () {
+                    function makeTest(x) {
+                        let expected = x * x * x;
+                        it(`${x} in the power 3 is ${expected}`, function () {
+                            assert.equal(pow(x, 3), expected);
+                        });
+                    }
+
+                    for (let x = 1; x <= 5; x++) {
+                        makeTest(x);
+                    }
+                });
+
+                // ... more tests to follow here, both describe and it can be added
+            });
+        </script> -->
+
+        <!-- the script with tests (describe, it...) -->
+        <script src="tests.js"></script>
+
+        <!-- the element with id="mocha" will contain test results -->
+        <div id="mocha"></div>
+
+        <!-- run tests! -->
+        <script>
+            mocha.run();
+        </script>
+    </body>
 </html>
