@@ -11,11 +11,15 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
         />
-        <!-- Add Mocha Framework Code -->
+        <!-- Add Mocha and Chai Framework Code -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
         <script>
             mocha.setup("bdd");
         </script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+		<script>
+		  let assert = chai.assert;
+		</script>
     </head>
     <body>
         <h1>Connect Four</h1>
@@ -35,33 +39,10 @@
         <script src="src/connect4.js"></script>
 
 		<!-- MOCHA TESTING -->
+        <script src="test/connect4.test.js"></script>
 
-        <!-- <script>
-            describe("pow", function () {
-                describe("raises x to power 3", function () {
-                    function makeTest(x) {
-                        let expected = x * x * x;
-                        it(`${x} in the power 3 is ${expected}`, function () {
-                            assert.equal(pow(x, 3), expected);
-                        });
-                    }
-
-                    for (let x = 1; x <= 5; x++) {
-                        makeTest(x);
-                    }
-                });
-
-                // ... more tests to follow here, both describe and it can be added
-            });
-        </script> -->
-
-        <!-- the script with tests (describe, it...) -->
-        <script src="tests.js"></script>
-
-        <!-- the element with id="mocha" will contain test results -->
         <div id="mocha"></div>
 
-        <!-- run tests! -->
         <script>
             mocha.run();
         </script>
