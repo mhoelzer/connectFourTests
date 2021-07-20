@@ -4,7 +4,8 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "mochify",
+    "coverage" : "nyc --instrument false mochify --transform [ babelify --ignore [ test ] --plugins [ babel-plugin-istanbul ] ]"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,13 @@
   },
   "homepage": "https://github.com/mhoelzer/connectFourTests#readme",
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.0.2",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "@babel/core": "^7.14.6",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babelify": "^10.0.0",
+    "mochify": "^8.1.0"
+  },
+  "dependencies": {
+    
   }
 }

@@ -161,8 +161,11 @@ const initializeGame = function () {
     displayCurrentPlayer(currentPlayer)
 }
 
-initializeGame()
-
-// module.exports = {
-// 	winnerVertical
-// };
+module.exports = {
+	winnerVertical,
+    winnerHorizontal,
+    winnerDiagonalDown,
+    winnerDiagonalUp,
+    isATie,
+    initializeGame
+};
