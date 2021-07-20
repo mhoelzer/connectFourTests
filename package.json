@@ -4,8 +4,7 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "mochify",
-    "coverage" : "nyc --instrument false mochify --transform [ babelify --ignore [ test ] --plugins [ babel-plugin-istanbul ] ]"
+    "test": "nyc --instrument false mochify --transform [ babelify --ignore [ test ] --plugins [ babel-plugin-istanbul ] ]"
   },
   "repository": {
     "type": "git",
