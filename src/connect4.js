@@ -164,8 +164,6 @@ const initializeGame = function () {
 module.exports = {
 	winnerVertical,
     winnerHorizontal,
-    winnerDiagonalDown,
     winnerDiagonalUp,
-    isATie,
     initializeGame
 };

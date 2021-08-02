@@ -1,10 +1,7 @@
-// let { winnerVertical } = require('../src/connect4');
 let { 
 	winnerVertical, 
 	winnerHorizontal, 
-	winnerDiagonalDown,
     winnerDiagonalUp,
-    isATie 
 } = require('../src/connect4');
 
 var assert = require('assert');
@@ -17,7 +14,7 @@ var assert = require('assert');
 
 describe("Test winnerVertical", function () {
 	it("Not winner; empty board", function () {
-		assert.equal(false, winnerVertical([
+		assert.strictEqual(false, winnerVertical([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -28,7 +25,7 @@ describe("Test winnerVertical", function () {
 	});
 
 	it("Winner; Player 1 win on Column 1", function() {
-		assert.equal(true, winnerVertical([
+		assert.strictEqual(true, winnerVertical([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[    1, null, null, null, null, null, null ],
@@ -39,7 +36,7 @@ describe("Test winnerVertical", function () {
 	});
 
 	it("Winner; Player 2 win on Column 1", function() {
-		assert.equal(true, winnerVertical([
+		assert.strictEqual(true, winnerVertical([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[    2, null, null, null, null, null, null ],
@@ -50,7 +47,7 @@ describe("Test winnerVertical", function () {
 	});
 
 	it("Winner; Player 2 win on top of Column 7", function() {
-		assert.equal(true, winnerVertical([
+		assert.strictEqual(true, winnerVertical([
 			[ null, null, null, null, null, null, 2 ],
 			[ null, null, null, null, null, null, 2 ],
 			[ null, null, null, null, null, null, 2 ],
@@ -61,7 +58,7 @@ describe("Test winnerVertical", function () {
 	});
 
 	it("Winner; Player 1 win on middle of Column 3", function() {
-		assert.equal(true, winnerVertical([
+		assert.strictEqual(true, winnerVertical([
 			[ null, null, null, null, null, null, 2 ],
 			[ null, null,    1, null, null, null, 2 ],
 			[ null, null,    1, null, null, null, 2 ],
@@ -72,7 +69,7 @@ describe("Test winnerVertical", function () {
 	});
 
 	it("Not Winner; Random board with no winner yet", function() {
-		assert.equal(false, winnerVertical([
+		assert.strictEqual(false, winnerVertical([
 			[ null, null, null, null, null, null, null ],
 			[ null, null,    2, null, null, null, null ],
 			[    1, null,    2, null,    2, null, null ],
@@ -85,7 +82,7 @@ describe("Test winnerVertical", function () {
 
 describe("Test winnerDiagonalUp", function () {
 	it("Not winner; empty board", function () {
-		assert.equal(false, winnerDiagonalUp([
+		assert.strictEqual(false, winnerDiagonalUp([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -96,7 +93,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Winner; Player 1 win from bottom left corner", function() {
-		assert.equal(true, winnerDiagonalUp([
+		assert.strictEqual(true, winnerDiagonalUp([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null,    1, null, null, null ],
@@ -107,7 +104,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Winner; Player 2 win from bottom left corner", function() {
-		assert.equal(true, winnerDiagonalUp([
+		assert.strictEqual(true, winnerDiagonalUp([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null,    2, null, null, null ],
@@ -118,7 +115,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Winner; Player 2 win in bottom right", function() {
-		assert.equal(true, winnerDiagonalUp([
+		assert.strictEqual(true, winnerDiagonalUp([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null,    2 ],
@@ -129,7 +126,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Winner; Player 1 win on top left", function() {
-		assert.equal(true, winnerDiagonalUp([
+		assert.strictEqual(true, winnerDiagonalUp([
 			[ null, null, null,    1, null, null,    2 ],
 			[ null, null,    1, null, null, null, null ],
 			[ null,    1, null, null, null, null,    2 ],
@@ -140,7 +137,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Winner; Player 2 win on top right", function() {
-		assert.equal(true, winnerDiagonalUp([
+		assert.strictEqual(true, winnerDiagonalUp([
 			[ null, null, null, null, null, null,    2 ],
 			[ null, null, null, null, null,    2, null ],
 			[ null, null, null, null,    2, null,    2 ],
@@ -151,7 +148,7 @@ describe("Test winnerDiagonalUp", function () {
 	});
 
 	it("Not Winner; Random board with no winner yet", function() {
-		assert.equal(false, winnerDiagonalUp([
+		assert.strictEqual(false, winnerDiagonalUp([
 			[ null, null, null, null, null, null, null ],
 			[ null, null,    2, null, null, null, null ],
 			[    1, null,    2, null,    2, null, null ],
@@ -164,7 +161,7 @@ describe("Test winnerDiagonalUp", function () {
 
 describe("Test winnerHorizontal", function () {
 	it("Not winner; empty board", function () {
-		assert.equal(false, winnerHorizontal([
+		assert.strictEqual(false, winnerHorizontal([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -175,7 +172,7 @@ describe("Test winnerHorizontal", function () {
 	});
 
 	it("Winner; Player 1 win on bottom row", function() {
-		assert.equal(true, winnerHorizontal([
+		assert.strictEqual(true, winnerHorizontal([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -186,7 +183,7 @@ describe("Test winnerHorizontal", function () {
 	});
 
 	it("Winner; Player 2 win on bottom row", function() {
-		assert.equal(true, winnerHorizontal([
+		assert.strictEqual(true, winnerHorizontal([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -197,7 +194,7 @@ describe("Test winnerHorizontal", function () {
 	});
 
 	it("Winner; Player 2 win in middle of row 3", function() {
-		assert.equal(true, winnerHorizontal([
+		assert.strictEqual(true, winnerHorizontal([
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null, null ],
@@ -208,7 +205,7 @@ describe("Test winnerHorizontal", function () {
 	});
 
 	it("Winner; Player 1 win on middle of top row", function() {
-		assert.equal(true, winnerHorizontal([
+		assert.strictEqual(true, winnerHorizontal([
 			[ null, null,    1,    1,    1,    1,    2 ],
 			[ null, null, null, null, null, null, null ],
 			[ null, null, null, null, null, null,    2 ],
@@ -219,7 +216,7 @@ describe("Test winnerHorizontal", function () {
 	});
 
 	it("Not Winner; Random board with no winner yet", function() {
-		assert.equal(false, winnerHorizontal([
+		assert.strictEqual(false, winnerHorizontal([
 			[ null, null, null, null, null, null, null ],
 			[ null, null,    2, null, null, null, null ],
 			[    1, null,    2, null,    2, null, null ],
